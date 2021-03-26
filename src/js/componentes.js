@@ -41,4 +41,21 @@ txtInput.addEventListener('keyup',( event )=> {
         crearTodoHtml( nuevoTodo);
         txtInput.value = '';
     }
-})
+});
+
+divTodoList.addEventListener('click', (event) => {
+
+    const nombreElemento = event.target.localName;
+    const todoElemento = event.target.parentElement.parentElement;
+    const todoId = todoElemento.getAttribute('data-id');
+    if (nombreElemento.includes('input')) { // click en el check
+        todoList.marcarCompetado(todoId);
+        todoElemento.classList.toggle('completed');
+        
+    }else if (nombreElemento.includes('button')) { //click en la x , entonces hay que borrar
+
+        todoList.eliminarTodo(todoId);
+        divTodoList.removeChild(todoElemento);
+        
+    }
+});
