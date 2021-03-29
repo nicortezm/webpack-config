@@ -5,15 +5,19 @@ const heroesIds = ['capi','iron','spider'];
 const heroesPromesas = heroesIds.map( buscarHeroe );
 
 
-export const obtenerHeroesArr = async() => {
+// export const obtenerHeroesArr = async() => {
     
-    const heroesArr = [];
+//     const heroesArr = [];
 
-    for (const id of heroesIds) {
-        const heroe = await buscarHeroeAsync(id);
-        heroesArr.push(heroe);
-    }
+//     for (const id of heroesIds) {
+//         heroesArr.push(buscarHeroe(id));
+        
+//     }
 
-    return heroesArr;
+//     return await Promise.all(heroesArr);
 
+// };
+
+export const obtenerHeroesArr = async() => {
+    return await Promise.all( heroesIds.map( buscarHeroe ) );
 };
