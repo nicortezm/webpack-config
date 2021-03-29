@@ -66,7 +66,7 @@ const crearFilaUsuario = ( usuario ) => {
     const tr = document.createElement('tr');
     tr.innerHTML = html;
     // Añadir el table row (tr) dentro del TBody creado anteriormente
-    body.appendChild(tr);
+    tbody.appendChild(tr);
 }
 
 
